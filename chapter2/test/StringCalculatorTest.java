@@ -21,4 +21,9 @@ public class StringCalculatorTest {
     public void add_one_digit() {
         assertEquals(1, cal.add("1"));
     }
+
+    @Test
+    public void add_쉼표구분자() {
+        assertEquals(4, cal.add("1,3"));
+    }
 }
