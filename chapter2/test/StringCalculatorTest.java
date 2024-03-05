@@ -16,4 +16,9 @@ public class StringCalculatorTest {
         assertEquals(0, cal.add(null));
         assertEquals(0, cal.add(""));
     }
+
+    @Test
+    public void add_one_digit() {
+        assertEquals(1, cal.add("1"));
+    }
 }
