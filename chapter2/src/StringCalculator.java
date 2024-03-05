@@ -8,7 +8,7 @@ public class StringCalculator {
     }
 
     private String[] getSplit(String text) {
-        return text.split(",");
+        return text.split(",|:");
     }
 
     private boolean isBlank(String text) {

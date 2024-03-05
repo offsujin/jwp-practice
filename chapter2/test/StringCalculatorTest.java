@@ -26,4 +26,9 @@ public class StringCalculatorTest {
     public void add_쉼표구분자() {
         assertEquals(4, cal.add("1,3"));
     }
+
+    @Test
+    public void add_쉼표_or_콜론구분자() {
+        assertEquals(9, cal.add("1,3:5"));
+    }
 }
