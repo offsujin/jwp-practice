@@ -1,19 +1,33 @@
 public class StringCalculator {
     int add(String text) {
-        if (text == null || text.isEmpty()) {
+        if (isBlank(text)) {
             return 0;
         }
 
-        if (text.contains(",")) {
-            String[] values = text.split(",");
-            int sum = 0;
-            for (String v : values) {
-                sum += Integer.parseInt(v);
-            }
-            return sum;
+        return sum(toInts(getSplit(text)));
+    }
+
+    private String[] getSplit(String text) {
+        return text.split(",");
+    }
+
+    private boolean isBlank(String text) {
+        return text == null || text.isEmpty();
+    }
+
+    private int[] toInts(String[] values) {
+        int[] numbers = new int[values.length];
+        for (int i = 0; i < values.length; i++) {
+            numbers[i] = Integer.parseInt(values[i]);
         }
+        return numbers;
+    }
 
-        return Integer.parseInt(text);
-
+    private int sum(int[] numbers) {
+        int sum = 0;
+        for (int n : numbers) {
+            sum += n;
+        }
+        return sum;
     }
 }
